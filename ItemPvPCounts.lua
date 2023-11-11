@@ -78,7 +78,7 @@ local counts = {} -- Store the counts here
 
 local currencyIndices = {
     6,
-    3,
+    2,
     4,
     7,
     5,
