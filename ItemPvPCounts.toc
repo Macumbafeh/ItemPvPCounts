@@ -1,7 +1,7 @@
-## Interface: 30300
+## Interface: 20400
 ## Author: Macumba
 ## Title: ItemPvPCounts
-## Notes: Display total PVP Marks of Honor, Honor Points and Arena Points. Support : Warsong Gulch Mark of Honor, Arathi Basin Mark of Honor, Alterac Valley Mark of Honor, Eye of the Storm Mark of Honor
+## Notes: Display Honor Points and Arena Points.
 ## SavedVariables: ItemPvPCountsDB
 
 ItemPvPCounts.lua
