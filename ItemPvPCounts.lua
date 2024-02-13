@@ -53,8 +53,12 @@ local function UpdateCounts()
 end
 
 frame:RegisterEvent("CURRENCY_DISPLAY_UPDATE")
-frame:SetScript("OnEvent", UpdateCounts)
+frame:RegisterEvent("PLAYER_LOGIN") -- Listen for PLAYER_LOGIN event
 
-UpdateCounts() -- Initial update
+frame:SetScript("OnEvent", function(self, event, ...)
+    if event == "CURRENCY_DISPLAY_UPDATE" or event == "PLAYER_LOGIN" then
+        UpdateCounts() -- Update counts on currency update or player login
+    end
+end)
 
 frame:Show()
