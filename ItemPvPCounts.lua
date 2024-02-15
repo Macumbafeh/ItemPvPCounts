@@ -55,9 +55,14 @@ end
 frame:RegisterEvent("CURRENCY_DISPLAY_UPDATE")
 frame:RegisterEvent("PLAYER_LOGIN") -- Listen for PLAYER_LOGIN event
 
+-- Additional events for Honor and Arena Points
+frame:RegisterEvent("HONOR_CURRENCY_UPDATE")
+frame:RegisterEvent("CURRENCY_DISPLAY_UPDATE")
+frame:RegisterEvent("PLAYER_MONEY")
+
 frame:SetScript("OnEvent", function(self, event, ...)
-    if event == "CURRENCY_DISPLAY_UPDATE" or event == "PLAYER_LOGIN" then
-        UpdateCounts() -- Update counts on currency update or player login
+    if event == "CURRENCY_DISPLAY_UPDATE" or event == "PLAYER_LOGIN" or event == "HONOR_CURRENCY_UPDATE" or event == "PLAYER_MONEY" then
+        UpdateCounts() -- Update counts on currency update, player login, honor currency update, or player money change
     end
 end)
 
