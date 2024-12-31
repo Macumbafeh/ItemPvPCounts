@@ -157,6 +157,12 @@ function events:CURRENCY_DISPLAY_UPDATE()
     UpdateCounts()
 end
 
+-- Add event handler for faction changes to update marks counts
+function events:UPDATE_FACTION()
+    FindCurrencyIndices()
+    UpdateCounts()
+end
+
 function events:PLAYER_LOGOUT()
     ItemPvPCountsDB = ItemPvPCountsDB_local
 end
@@ -165,6 +171,7 @@ end
 frame:RegisterEvent("ADDON_LOADED")
 frame:RegisterEvent("PLAYER_ENTERING_WORLD")
 frame:RegisterEvent("CURRENCY_DISPLAY_UPDATE")
+frame:RegisterEvent("UPDATE_FACTION")
 frame:SetScript("OnEvent", function(self, event, ...)
     if events[event] then
         events[event](self, ...)
